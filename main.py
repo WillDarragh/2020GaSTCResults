@@ -9,10 +9,10 @@ import json
 
 # Setup map
 
-with open(r'C:\Users\wdarr\PycharmProjects\GeoGeorgia\data\ga_counties.json') as counties_file:
+with open(r'C:\Users\wdarr\PycharmProjects\2020GaSTCResults\data\merged_ga_counties.json') as counties_file:
     counties = json.load(counties_file)
 
-df = pd.read_csv(r'C:\Users\wdarr\PycharmProjects\GeoGeorgia\data\winners_by_county.csv',
+df = pd.read_csv(r'C:\Users\wdarr\PycharmProjects\2020GaSTCResults\data\winners_by_county.csv',
                  dtype={"County": str})
 
 max_number = np.max(df['Winners'])

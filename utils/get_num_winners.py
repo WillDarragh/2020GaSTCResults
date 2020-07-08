@@ -7,7 +7,7 @@ all_counties = []
 
 pages = 3
 
-with open(r'C:\Users\wdarr\PycharmProjects\GeoGeorgia\data\results.dat') as results_file:
+with open(r'C:\Users\wdarr\PycharmProjects\2020GaSTCResults\data\results.dat') as results_file:
 
     for page in range(pages):
 
@@ -44,7 +44,7 @@ with open(r'C:\Users\wdarr\PycharmProjects\GeoGeorgia\data\results.dat') as resu
 
 counties_winners = [(county, all_counties.count(county)) for county in set(all_counties)]
 
-with open(r'C:\Users\wdarr\PycharmProjects\GeoGeorgia\data\ga_counties.json') as ga_counties_file:
+with open(r'C:\Users\wdarr\PycharmProjects\2020GaSTCResults\data\ga_counties.json') as ga_counties_file:
     ga_counties = json.load(ga_counties_file)
 
 county_names = [feature['properties']['NAME'] for feature in ga_counties['features']]
@@ -59,5 +59,5 @@ for county, winners in counties_winners:
 
 df = pd.DataFrame({'County': county_names, 'Winners': county_winners})
 
-with open(r'C:\Users\wdarr\PycharmProjects\GeoGeorgia\data\winners_by_county.csv', 'w') as winners_file:
+with open(r'C:\Users\wdarr\PycharmProjects\2020GaSTCResults\data\winners_by_county.csv', 'w') as winners_file:
     df.to_csv(winners_file)
